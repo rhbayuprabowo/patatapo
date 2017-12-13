@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Patatapo</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script typ="text/javascript" src="js/paper-full.min.js"></script>
+  <script type="text/paperscript" canvas="myCanvas">
+   
+    var circles = [];
+    var posX = 100;
+    var posY = 20;
+    while(posX < 1200 || posY < 700) {
+      if (posX > 1200) {
+        posX = 100;
+        posY += 100;
+        console.log(posY);
+      } 
+      var newShape = new Path.Circle(new Point(posX, posY), 10); 
+      newShape.fillColor = 'rgb('+ posX % 255 +', ' + posY % 255 + ', ' + posX % 255 + ')';
+      circles.push(newShape);
+      posX += 100;
+    }
+
+
+  </script>
+</head>
+
+<body>
+  <canvas id="myCanvas" resize></canvas>
+  <script>
+        
+  </script>
+</body>
+
+</html>
