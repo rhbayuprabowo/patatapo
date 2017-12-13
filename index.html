@@ -7,32 +7,34 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Patatapo</title>
   <link rel="stylesheet" href="css/style.css">
-  <script typ="text/javascript" src="js/paper-full.min.js"></script>
+  <script typ="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.5/paper-full.min.js"></script>
   <script type="text/paperscript" canvas="myCanvas">
-   
     var circles = [];
-    var posX = 100;
-    var posY = 20;
-    while(posX < 1200 || posY < 700) {
-      if (posX > 1200) {
-        posX = 100;
-        posY += 100;
-        console.log(posY);
-      } 
-      var newShape = new Path.Circle(new Point(posX, posY), 10); 
-      newShape.fillColor = 'rgb('+ posX % 255 +', ' + posY % 255 + ', ' + posX % 255 + ')';
-      circles.push(newShape);
-      posX += 100;
-    }
-
-
+    
+        function onKeyDown(event) {
+          var maxSize = new Point(view.size.width, view.size.height);
+          var newPoint = maxSize *
+            new Point.random();
+          var newPath = new Path.Circle(newPoint, 150);
+          newPath.fillColor = "pink";
+          circles.push(newPath);
+          return false;
+        }
+    
+        function onFrame(event) {
+          for (var i = 0; i < circles.length; i++) {
+            circles[i].scale(0.95);
+            circles[i].fillColor.hue += 1;
+          }
+          
+        }
   </script>
 </head>
 
 <body>
   <canvas id="myCanvas" resize></canvas>
   <script>
-        
+    
   </script>
 </body>
 
