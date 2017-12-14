@@ -1,6 +1,6 @@
 # patatapo
 
-Proyek ini adalah kloning sederhana situs [patatap](https://patatap.com/)
+This project is a simple cloning site [patatap] (https://patatap.com/)
 
 ## Motivation
 
