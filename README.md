@@ -4,7 +4,7 @@ This project is a simple cloning site [patatap] (https://patatap.com/)
 
 ## Motivation
 
-This project was created to learn about javascript and its libraries.
+This project was created to learn about javascript and its libraries. This is my journey to learn web development.
 
 ## Built With
 
